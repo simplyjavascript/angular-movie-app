@@ -1,0 +1,37 @@
+.card-body-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  .card-body {
+    display: flex;
+
+    .banner-img {
+      border-radius: 10px;
+      width: 240px;
+      height: 360px;
+      min-width: 240px;
+    }
+
+    .details-section {
+      margin: 0px 10px;
+
+      .detail-wrapper {
+        margin-bottom: 20px;
+
+        .detail-text {
+          color: #000;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .edit-del-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+
+    button {
+      margin: 0 10px;
+    }
+  }
+}

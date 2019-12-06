@@ -1,0 +1,43 @@
+<app-movie-card *ngIf="selectedMovie" [header]="selectedMovie.name">
+  <div class="card-body-wrapper">
+    <div class="card-body">
+      <img class="banner-img" [src]="selectedMovie.imageUrl" alt="selectedMovie.name">
+      <div class="details-section">
+        <p class="detail-wrapper"> <span class="detail-text"> Cast</span>: <span
+            *ngFor="let celeb of selectedMovie.cast">
+            {{ celeb }}, </span>
+        </p>
+        <p class="detail-wrapper"> <span class="detail-text"> Language</span>: {{ selectedMovie.language}}
+        </p>
+        <p class="detail-wrapper"> <span class="detail-text"> Duration</span>: {{ selectedMovie.duration}}
+        </p>
+        <p class="detail-wrapper"> <span class="detail-text"> Genre</span>: <span
+            *ngFor="let gen of selectedMovie.genre">
+            {{ gen }}, </span>
+        </p>
+        <p class="detail-wrapper"> <span class="detail-text"> IMDB Rating</span>: {{ selectedMovie.rating}}
+        </p>
+        <p class="detail-wrapper"> <span class="detail-text"> Popularity</span>: {{ selectedMovie.popularity}}
+        </p>
+        <p class="detail-wrapper"> <span class="detail-text"> Synopsis</span>: {{ selectedMovie.synopsis}}
+        </p>
+      </div>
+    </div>
+    <div class="edit-del-wrapper">
+      <button type="button" (click)="deleteMovie(selectedMovie.id)" class="btn btn-danger btn-sm">Delete</button>
+      <button (click)="editMovie(template)" type="button" class="btn btn-warning btn-sm">Edit</button>
+    </div>
+  </div>
+</app-movie-card>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Edit Movie </h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template>

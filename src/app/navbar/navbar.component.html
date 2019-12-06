@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" routerLink="/">
+    <fa-icon [icon]="faFilm"></fa-icon>
+    {{ logoText }}
+  </a>
+  <button class="navbar-toggler" type="button" aria-controls="navbarColor02" aria-expanded="false"
+    aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor02">
+    <ul class="navbar-nav mr-auto">
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" *ngFor="let item of navItems"
+        class="nav-item">
+        <a class="nav-link" [routerLink]="[item.path]"> {{ item.text }} </a>
+      </li>
+    </ul>
+  </div>
+</nav>

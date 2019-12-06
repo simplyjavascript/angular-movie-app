@@ -1,0 +1,8 @@
+<div class="masonry-holder">
+  <ngx-masonry [useImagesLoaded]="true"
+    [options]="{ transitionDuration: '0.8s', gutter: 20, resize: true,fitWidth: true, itemSelector: '.masonry-item' }">
+    <div appShadow ngxMasonryItem class="masonry-item" *ngFor="let movie of movies">
+      <img [src]="movie.imageUrl" [alt]="movie.name">
+    </div>
+  </ngx-masonry>
+</div>

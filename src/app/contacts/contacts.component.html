@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <h1 class="display-3"> {{ contact.name }}</h1>
+  <p class="lead"> {{ contact.address | uppercase }}</p>
+  <p> {{ contact.mail | lowercase }} </p>
+  <p> Starts at {{ contact.startDate | date }} </p>
+  <p> Fees: {{ contact.fees | number | currency }}</p>
+  <hr class="my-4">
+  <p> {{ contact.description }} </p>
+</div>

@@ -1,0 +1,142 @@
+<div class="add-movie-wrapper">
+  <div class="row">
+    <div class="col">
+      <form [formGroup]="movieForm" (ngSubmit)="onSubmit()">
+        <fieldset>
+          <legend>{{ formTitle }}</legend>
+          <!-- name -->
+          <div class="form-group">
+            <label>Name</label>
+            <input
+              type="text"
+              [formControlName]="'name'"
+              class="form-control"
+              placeholder="Enter Movie Name"
+            />
+          </div>
+          <!-- rating -->
+          <div class="form-group">
+            <label>Movie Rating</label>
+            <input
+              type="number"
+              [formControlName]="'rating'"
+              class="form-control"
+              placeholder="Enter Movie Rating"
+            />
+          </div>
+          <!-- cast  -->
+          <div class="form-group" formArrayName="movieCast">
+            <label>Movie Cast</label>
+            <button
+              class="btn btn-primary btn-sm add-cast-btn"
+              (click)="addCast()"
+              type="button"
+            >
+              Add Cast
+            </button>
+
+            <div
+              class="form-group"
+              *ngFor="let hobbyCtrl of movieCast; let i = index"
+            >
+              <input class="form-control" [formControlName]="i" type="text" />
+            </div>
+          </div>
+
+          <!-- image url -->
+          <div class="form-group">
+            <label>Movie image URL</label>
+            <input
+              type="text"
+              [formControlName]="'imageUrl'"
+              class="form-control"
+              placeholder="Enter Movie URL"
+            />
+          </div>
+
+          <!-- language -->
+          <div class="form-group">
+            <label>Language</label>
+            <select [formControlName]="'language'" class="form-control">
+              <option value="english">English</option>
+              <option value="hindi">Hindi</option>
+              <option value="tamil">Tamil</option>
+              <option value="malayalam">Malayalam</option>
+            </select>
+          </div>
+
+          <!-- genre  -->
+          <div class="form-group" formArrayName="genre">
+            <label>Movie Genre</label>
+            <button
+              class="btn btn-primary btn-sm add-cast-btn"
+              (click)="addGenre()"
+              type="button"
+            >
+              Add Genre
+            </button>
+
+            <div
+              class="form-group"
+              *ngFor="let genCtrl of genre; let i = index"
+            >
+              <input class="form-control" [formControlName]="i" type="text" />
+            </div>
+          </div>
+
+          <!-- duration -->
+          <div class="form-group">
+            <label>Duration</label>
+            <input
+              type="text"
+              [formControlName]="'duration'"
+              class="form-control"
+              placeholder="Enter Movie Name"
+            />
+          </div>
+
+          <!-- popularity -->
+          <div class="form-group">
+            <label>Popularity</label>
+            <input
+              type="number"
+              [formControlName]="'popularity'"
+              class="form-control"
+              placeholder="Enter Movie Name"
+            />
+          </div>
+
+          <!-- IMDB Rating -->
+          <div class="form-group">
+            <label>IMDB Rating</label>
+            <input
+              type="number"
+              [formControlName]="'imdbRating'"
+              class="form-control"
+              placeholder="Enter Movie Name"
+            />
+          </div>
+
+          <!-- Synopsis -->
+          <div class="form-group">
+            <label>Synopsis</label>
+            <textarea
+              [formControlName]="'synopsis'"
+              class="form-control"
+              rows="3"
+            ></textarea>
+          </div>
+
+          <button
+            [disabled]="!movieForm.valid"
+            type="submit"
+            class="btn btn-primary"
+          >
+            {{ selectedMovieId ? "Update" : "Add" }}
+          </button>
+        </fieldset>
+        <!-- <pre> {{ movieForm.value | json }}</pre> -->
+      </form>
+    </div>
+  </div>
+</div>

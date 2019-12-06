@@ -1,0 +1,9 @@
+li {
+  &:hover {
+    cursor: pointer;
+  }
+  &.selected {
+    background-color: #ce1f99;
+    color: #fff;
+  }
+}

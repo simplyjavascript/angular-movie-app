@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-4">
+      <app-movie-card [header]="'Movies near you'">
+        <app-movie-list-item
+          [movie]="movie"
+          [selectedId]="selectedId"
+          (movieSelected)="onMovieSelected($event)"
+          *ngFor="let movie of movies"
+        >
+        </app-movie-list-item>
+      </app-movie-card>
+    </div>
+    <div class="col-8">
+      <app-movie-detail [selectedMovie]="selectedMovie"></app-movie-detail>
+    </div>
+  </div>
+</div>
+<div class="container-fluid mt-3 mb-3">
+  <div class="row justify-content-center">
+    <button type="button" (click)="addNewMovie()" class="btn btn-primary">
+      Add new movie
+    </button>
+  </div>
+</div>

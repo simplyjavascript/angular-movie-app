@@ -1,0 +1,8 @@
+<li
+  [ngClass]="{ selected: movie.id === classId }"
+  (click)="selectMovie(movie)"
+  class="list-group-item d-flex justify-content-between align-items-center"
+>
+  {{ movie.name }}
+  <fa-icon [icon]="faChevronRight"></fa-icon>
+</li>  
